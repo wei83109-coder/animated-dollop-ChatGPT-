@@ -27,3 +27,6 @@ There are no automated tests for the Swift playground yet. To verify the reposit
 - Wire up CI in `.github/workflows/ci.yml` to build the playground on macOS runners and surface lint/test results.
 
 For a detailed feature and file roadmap, see [ROADMAP.md](ROADMAP.md).
+
+## Refresh-rate behavior on iPhone
+If the playground eventually embeds high-motion views, see [REFRESH_RATE.md](REFRESH_RATE.md) for why ProMotion devices may sit at 80Hz and how to request 120Hz responsibly inside the app.
