@@ -8,6 +8,7 @@ from typing import Any, Dict, List
 import json
 
 REQUIRED_FIELDS = {"name", "description", "version", "author", "entry_point"}
+OPTIONAL_FIELDS = {"permissions", "quality_profile"}
 
 
 @dataclass
@@ -20,12 +21,13 @@ class Manifest:
     author: str
     entry_point: str
     permissions: List[str] = field(default_factory=list)
+    quality_profile: Dict[str, str] = field(default_factory=dict)
     extra: Dict[str, Any] = field(default_factory=dict)
 
     @classmethod
     def from_dict(cls, payload: Dict[str, Any]) -> "Manifest":
         cls._validate_structure(payload)
-        extra_keys = set(payload) - (REQUIRED_FIELDS | {"permissions"})
+        extra_keys = set(payload) - (REQUIRED_FIELDS | OPTIONAL_FIELDS)
         extra = {key: payload[key] for key in extra_keys}
         return cls(
             name=payload["name"],
@@ -34,6 +36,7 @@ class Manifest:
             author=payload["author"],
             entry_point=payload["entry_point"],
             permissions=payload.get("permissions", []),
+            quality_profile=payload.get("quality_profile", {}),
             extra=extra,
         )
 
@@ -61,6 +64,26 @@ class Manifest:
             ):
                 raise ValueError("'permissions' must be a list of non-empty strings")
 
+        if "quality_profile" in payload:
+            Manifest._validate_quality_profile(payload["quality_profile"])
+
+    @staticmethod
+    def _validate_quality_profile(profile: Any) -> None:
+        if not isinstance(profile, dict):
+            raise ValueError("'quality_profile' must be a dictionary")
+
+        allowed_audio = {"lossless", "high"}
+        allowed_video = {"8k", "4k", "1080p"}
+
+        audio = profile.get("audio")
+        video = profile.get("video")
+
+        if not isinstance(audio, str) or audio not in allowed_audio:
+            raise ValueError("'quality_profile.audio' must be one of: lossless, high")
+
+        if not isinstance(video, str) or video not in allowed_video:
+            raise ValueError("'quality_profile.video' must be one of: 8k, 4k, 1080p")
+
 
 DEFAULT_TEMPLATE: Dict[str, Any] = {
     "name": "Sample YouTube Plugin",
@@ -72,6 +95,10 @@ DEFAULT_TEMPLATE: Dict[str, Any] = {
         "youtube.readonly",
         "youtube.upload",
     ],
+    "quality_profile": {
+        "audio": "lossless",
+        "video": "8k",
+    },
 }
 
 
