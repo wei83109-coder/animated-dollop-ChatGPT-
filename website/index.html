@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NovaFlux Automator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="background-glow"></div>
+  <header class="nav glass">
+    <div class="brand">NovaFlux Automator</div>
+    <nav>
+      <a href="#value">Core value</a>
+      <a href="#guide">How it works</a>
+      <a href="#api">API setup</a>
+    </nav>
+    <a class="cta" href="#cta">Get started</a>
+  </header>
+
+  <main>
+    <section class="hero glass">
+      <div class="hero-copy">
+        <p class="eyebrow">Liquid-glass UI • iOS 18-inspired</p>
+        <h1>One-tap GitHub automation on your iPhone.</h1>
+        <p class="lede">NovaFlux Automator pairs Codex with Swift Playgrounds to triage issues, draft replies, and share ready-to-use prompts from your clipboard.</p>
+        <div class="actions">
+          <a class="primary" href="../GitHubStarter.playground">Open Playground</a>
+          <a class="secondary" href="../VIDEO_SCRIPT.md">Watch script</a>
+        </div>
+        <div class="metrics">
+          <div>
+            <strong>80Hz → 120Hz ready</strong>
+            <p>Built with ProMotion guidance for smooth motion.</p>
+          </div>
+          <div>
+            <strong>Liquid clarity</strong>
+            <p>Glassmorphic panels, neon accents, and depth shadows.</p>
+          </div>
+        </div>
+      </div>
+      <div class="hero-panel glass">
+        <p class="label">Automation preview</p>
+        <div class="bubble">Ready to launch NovaFlux Automator.</div>
+        <div class="bubble bright">Trigger NovaFlux automation →</div>
+        <div class="bubble subtle">Clipboard: PR review checklist copied.</div>
+      </div>
+    </section>
+
+    <section id="value" class="grid glass">
+      <div class="card">
+        <h2>Core value</h2>
+        <p>Handle GitHub triage, reviews, and documentation without waiting for your laptop. NovaFlux builds authenticated requests and drafts responses directly from your device.</p>
+      </div>
+      <div class="card">
+        <h3>Why it matters</h3>
+        <ul>
+          <li>Stay responsive on the move with Codex-quality drafts.</li>
+          <li>Share PR checklists and issue templates with one tap.</li>
+          <li>Liquid-glass UI keeps the experience bright, legible, and tactile.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="guide" class="timeline glass">
+      <h2>How to use (2 steps)</h2>
+      <ol>
+        <li><strong>Open</strong> <code>GitHubStarter.playground</code> in Swift Playgrounds or Xcode and tap <em>Run</em>.</li>
+        <li><strong>Tap</strong> <em>Trigger NovaFlux automation</em> to send a Codex-backed request, then share or copy the response.</li>
+      </ol>
+      <p class="hint">Need visuals? The <a href="../VIDEO_SCRIPT.md">2-minute script</a> walks through the exact beats.</p>
+    </section>
+
+    <section id="api" class="api glass">
+      <div>
+        <h2>API setup</h2>
+        <p>Swap in your live endpoint and key to run real automations. Defaults are safe for demos.</p>
+        <div class="pill">NOVFLUX_API_BASE = <span>https://api.novaflux.example/v1</span></div>
+        <div class="pill">NOVFLUX_API_KEY = <span>nova-demo-key-please-replace</span></div>
+        <p class="note">Update these values in your environment before running the playground to perform live requests.</p>
+      </div>
+      <div class="glass api-card">
+        <p class="label">Live request builder</p>
+        <p class="microcopy">intent: <strong>mobile-github-assistant</strong><br>device: <strong>swift-playgrounds</strong></p>
+        <p class="microcopy">Authorization: <strong>Bearer &lt;your-api-key&gt;</strong></p>
+        <p class="microcopy">POST <strong>/automations</strong> at your base URL</p>
+      </div>
+    </section>
+
+    <section id="cta" class="cta-panel glass">
+      <h2>Ready to automate?</h2>
+      <p>Drop the playground onto your iPhone, set your API key, and let NovaFlux handle the busywork while you stay in flow.</p>
+      <div class="actions">
+        <a class="primary" href="../GitHubStarter.playground">Launch now</a>
+        <a class="secondary" href="../README.md">Read the README</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

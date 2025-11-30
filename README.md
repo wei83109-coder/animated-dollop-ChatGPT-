@@ -37,3 +37,7 @@ For a detailed feature and file roadmap, see [ROADMAP.md](ROADMAP.md).
 
 ## Refresh-rate behavior on iPhone
 If the playground eventually embeds high-motion views, see [REFRESH_RATE.md](REFRESH_RATE.md) for why ProMotion devices may sit at 80Hz and how to request 120Hz responsibly inside the app.
+
+## Official site & video script
+- Preview the liquid-glass marketing site in `website/index.html` (open directly or serve via `python -m http.server` inside the `website/` folder) for a ProMotion-inspired look that matches modern iOS.
+- Use [VIDEO_SCRIPT.md](VIDEO_SCRIPT.md) as the storyboard for a two-minute intro covering the product value, live API setup, and clipboard quick actions.
