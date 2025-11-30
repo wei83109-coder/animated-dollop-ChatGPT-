@@ -21,6 +21,7 @@ def test_manifest_validation_success(tmp_path: Path):
 
     assert manifest.name == content["name"]
     assert manifest.permissions == content["permissions"]
+    assert manifest.quality_profile == content["quality_profile"]
     assert manifest.extra == {}
 
 
@@ -38,6 +39,14 @@ def test_manifest_rejects_invalid_permissions():
     with pytest.raises(ValueError) as excinfo:
         Manifest.from_dict(payload)
     assert "permissions" in str(excinfo.value)
+
+
+def test_manifest_rejects_invalid_quality_profile():
+    payload = generate_template()
+    payload["quality_profile"] = {"audio": "bad", "video": "360p"}
+    with pytest.raises(ValueError) as excinfo:
+        Manifest.from_dict(payload)
+    assert "quality_profile" in str(excinfo.value)
 
 
 def test_write_template_creates_file(tmp_path: Path):
