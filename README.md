@@ -18,7 +18,9 @@ A Swift Playgrounds experience that helps newcomers use GitHub on iOS. It explai
 - Use the quick actions in the playground to copy prompts and templates directly to your clipboard.
 
 ## Testing the repository
-There are no automated tests for the Swift playground yet. To verify the repository works, open the playground in Swift Playgrounds or Xcode and confirm the live view renders with the GitHub and Codex guidance cards plus quick-action buttons.
+1. Create a Python virtual environment (`python -m venv .venv && source .venv/bin/activate`) and install the only dependency: `pip install -r requirements.txt`.
+2. Run `pytest` to execute a lightweight structural test suite that ensures the repository contains the expected playground files, documentation, and refresh-rate guidance.
+3. For a manual end-to-end check, open `GitHubStarter.playground` in Swift Playgrounds or Xcode and confirm the live view renders with the GitHub and Codex guidance cards plus quick-action buttons.
 
 ## What to add next
 - Build the actual Swift playground described in this README (`GitHubStarter.playground/Contents.swift`) with SwiftUI cards and buttons.
