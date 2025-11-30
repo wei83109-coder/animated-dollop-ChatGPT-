@@ -14,6 +14,12 @@ A minimal toolkit for a YouTube plugin engineering team. It helps you scaffold a
    python -m pip install -e .[dev]
    ```
 
+## Project structure
+- `src/backend/youtube_plugin_tools/`: Python package for manifest generation and validation.
+- `src/frontend/`: Placeholder for UI code and static assets.
+- `configs/`: Shared configuration artifacts.
+- `tests/`: Automated tests for backend logic.
+
 ## Usage
 Generate a starter manifest:
 ```bash

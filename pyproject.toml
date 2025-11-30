@@ -13,11 +13,17 @@ readme = "README.md"
 requires-python = ">=3.10"
 dependencies = []
 
+[tool.setuptools]
+package-dir = {"" = "src/backend"}
+
+[tool.setuptools.packages.find]
+where = ["src/backend"]
+
 [project.optional-dependencies]
 dev = [
   "pytest>=7.4",
 ]
 
 [tool.pytest.ini_options]
-pythonpath = ["src"]
+pythonpath = ["src/backend"]
 testpaths = ["tests"]
