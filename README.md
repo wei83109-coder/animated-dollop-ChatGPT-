@@ -8,6 +8,12 @@ A Swift Playgrounds experience that helps newcomers use GitHub on iOS. It explai
 - Provides quick actions to copy issue templates, PR review checklists, repository links, and ready-to-use prompts for Codex.
 - Builds an authenticated request to the NovaFlux Automator API so you can test end-to-end automation flows with your own credentials.
 
+## Repository layout
+- `GitHubStarter.playground/Contents.swift`: Entry point that wires quick actions, NovaFlux automation, and the live view.
+- `GitHubStarter.playground/Sources/`: Reusable helpers for quick-action models, clipboard handling, and NovaFlux requests.
+- `GitHubStarter.playground/Resources/`: Prompt templates and checklists that power clipboard actions and NovaFlux payloads.
+- `tests/`: Lightweight structural tests to keep the scaffolding intact.
+
 ## Run it on your device
 1. Download the repository on a Mac or in Files on iPad/iPhone.
 2. Open `GitHubStarter.playground` in Swift Playgrounds (iOS/iPadOS) or Xcode.
