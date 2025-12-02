@@ -1,0 +1,19 @@
+{
+  "name": "animated-dollop-chatgpt-",
+  "version": "1.0.0",
+  "description": "A Swift Playgrounds experience that helps newcomers use GitHub on iOS. It explains what GitHub and Codex can do on mobile and offers one-tap quick actions for common collaboration tasks. The latest playground build also wires in **NovaFlux Automator**, a fictional Codex-powered API to draft replies and triage GitHub work from your device.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "openai": "^4.0.0"
+  }
+}
